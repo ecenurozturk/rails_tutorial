@@ -1,5 +1,12 @@
-<h1>Hello posts new</h1>
-<%= form_for :posts do |f| %>
+<h1>Postlar </h1>
+<%= form_for :post, url: posts_path do |f| %>
+ <% if @post.errors.any? %>
+ <%= pluralize(@post.errors.count, "error") %>
+ <% @post.errors.full_messages.each do |msg|%>
+  <%= msg %>
+ <%end %>
+ <h1>hata olustu</h1>
+ <% end  %>
 <p>
   <%= f.label :header %><br>
   <%= f.text_field :header %>
@@ -13,3 +20,4 @@
   </p>
 
 <% end %>
+<%= link_to 'back', posts_path %>

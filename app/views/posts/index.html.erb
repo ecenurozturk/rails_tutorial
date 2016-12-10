@@ -1,0 +1,12 @@
+<h1>all posts</h1>
+
+<% @posts.each do |post| %>
+<b><%= "#{post.id}. post " %></b>
+<%=post.id %>
+<%= post.header %>
+<%= post.body %>
+<%= link_to "Show", post_path(post) %>
+<br>
+<% end %>
+<br>
+<%= link_to 'New post',new_post_path %>
