@@ -1,0 +1,22 @@
+<%= form_for @post do |f| %>
+ <% if @post.errors.any? %>
+ <%= pluralize(@post.errors.count, "error") %>
+ <% @post.errors.full_messages.each do |msg|%>
+  <%= msg %>
+ <%end %>
+ <h1>hata olustu</h1>
+ <% end  %>
+<p>
+  <%= f.label :header %><br>
+  <%= f.text_field :header %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+</p>
+<%= f.submit %>
+  </p>
+
+<% end %>
+<%= link_to 'back', posts_path %>
