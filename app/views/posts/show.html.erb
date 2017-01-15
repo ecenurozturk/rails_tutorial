@@ -11,17 +11,7 @@
 <br>
 <%= @post.updated_at %>
 <br>
-<% @post.comments.each do |comment| %>
-<p>
-  <%= comment.body %>
-</p>
-<% end %>
-<br>
-<h1>Comment ekle</h1>
-<%= form_for([@post, @post.comments.build]) do |f|  %>
-<br>
-<%= f.text_field :body %>
-<br>
-<%= f.submit %>
-<br>
-<% end %>
+
+<h1>Comments</h1>
+<%= render @post.comments %>
+<%= render 'comments/form' %>

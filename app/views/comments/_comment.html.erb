@@ -1,0 +1,9 @@
+<p>
+    <b>comment:</b>
+    <%= comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Comment', post_comment_path(comment.post, comment),
+  method: :delete %>
+</p>
